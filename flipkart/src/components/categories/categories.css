@@ -1,5 +1,6 @@
 .categories_wrapper{
     margin-top: 20px;
+    position: relative;
 }
 
 .category{
@@ -20,3 +21,16 @@
     margin-top: 4px;
 }
 
+.carousel_nxt_btn{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    z-index: 999;
+}   
+
+.carousel_prev_btn{
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    z-index: 999;
+} 

@@ -1,10 +1,19 @@
-import React from "react";
+import { Card } from "@mui/material";
+import React, { useEffect } from "react";
 
 const Products = () =>{
 
+
+
+    useEffect(()=> {
+
+    },[])
+
     return (
-        <section>
-            <h2>Best of Clothes</h2>
+        <section className="products">
+            <Card>
+              
+            </Card>
         </section>
     )
 }

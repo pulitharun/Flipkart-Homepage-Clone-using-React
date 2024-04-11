@@ -1,5 +1,8 @@
 
-
+body {
+  background-color : #f1f2f4;
+  overflow-x:hidden ;
+}
 
 *{ 
   margin : 0;
@@ -7,6 +10,4 @@
   box-sizing: border-box; 
 }
 
-body {
-  background-color : #f1f2f4;
-}
+

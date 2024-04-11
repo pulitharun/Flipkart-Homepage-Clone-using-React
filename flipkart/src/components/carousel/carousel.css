@@ -1,0 +1,14 @@
+
+.carousel_btn{
+    height: 70px;
+    width: 30px;
+    background-color: whitesmoke;
+
+}
+.carousel_item{
+    height: 250px;
+    width: 100%;
+}
+.carousel_wrapper{
+    margin-top: 20px;
+}
