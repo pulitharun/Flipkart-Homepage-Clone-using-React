@@ -1,6 +1,6 @@
 import { Skeleton } from "@mui/material";
 import React from "react";
-
+import "./loader.css"
 
 const Loader = () =>{
 
@@ -11,8 +11,13 @@ const Loader = () =>{
 
 
 const Rowloader = () =>{
-    return new Array(4).fill(0).map((i, ind)=>  <Loader key={ind}/> )
-}
+    return (
+    <div className="loader_container"> 
+        {new Array(6).fill(0).map((i, ind) => (
+        <Loader key={ind} />
+      ) )}
+    </div> 
+)}
 
 export {Rowloader}
 export default Loader

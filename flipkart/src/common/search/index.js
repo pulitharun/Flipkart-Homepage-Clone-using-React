@@ -16,6 +16,6 @@ const Searchbar = () => {
   );
 };
 
-const options = ["Electronics", "Mens", "Womens", "Children"];
+const options = ["Electronics", "Men's Wear", "Women's Wear", "Accessories"];
 
 export default Searchbar;

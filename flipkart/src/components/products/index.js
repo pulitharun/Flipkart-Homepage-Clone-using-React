@@ -1,6 +1,7 @@
 import { Card, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Rowloader } from "../../common/loader";
+import ProductList from "../productlist";
 
 const Products = () => {
   const [products, setProducts] = useState(null);
@@ -31,7 +32,7 @@ const Products = () => {
 
   return (
     <section className="products">
-      <Card sx={{padding: 4, marginTop:4}}>
+      <Card sx={{ padding: 4, marginTop: 4 }}>
         <Typography variant="h6">Clothings</Typography>
         {Isloading && <Rowloader />}
         {!Isloading &&
@@ -39,12 +40,14 @@ const Products = () => {
           clothings.map((item, index) => <h2 key={item.id}>{item.name}</h2>)}
       </Card>
 
-      <Card sx={{padding: 4, marginTop:4}}>
-      <Typography variant="h6">Best of accessories</Typography>
+      <Card sx={{ padding: 4, marginTop: 4 }}>
+        <Typography variant="h6">Best of accessories</Typography>
         {Isloading && <Rowloader />}
-        {!Isloading &&
-          products &&
-          accessories.map((item, index) => <h2 key={item.id}>{item.name}</h2>)}
+        {!Isloading && products && (
+          <ProductList >
+           { accessories.map((item, index) =>( <h2 key={item.id}>{item.name}</h2>))}
+          </ProductList>
+        )}
       </Card>
     </section>
   );
