@@ -2,6 +2,7 @@ import { Card, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Rowloader } from "../../common/loader";
 import ProductList from "../productlist";
+import ProductCard from "../../common/productCard";
 
 const Products = () => {
   const [products, setProducts] = useState(null);
@@ -17,7 +18,6 @@ const Products = () => {
         "https://5d76bf96515d1a0014085cf9.mockapi.io/product"
       );
       const data = await res.json();
-      console.log(data);
       setProducts(data);
     } catch (e) {
       console.error(e);
@@ -31,26 +31,33 @@ const Products = () => {
   }, []);
 
   return (
+    <section>
     <section className="products">
-      <Card sx={{ padding: 4, marginTop: 4 }}>
-        <Typography variant="h6">Clothings</Typography>
-        {Isloading && <Rowloader />}
-        {!Isloading &&
-          products &&
-          clothings.map((item, index) => <h2 key={item.id}>{item.name}</h2>)}
-      </Card>
-
-      <Card sx={{ padding: 4, marginTop: 4 }}>
-        <Typography variant="h6">Best of accessories</Typography>
+      <Card sx={{ padding: 4, marginTop: 4, borderRadius: 0 }}>
+        <Typography variant="h5">Best of Clothings</Typography>
         {Isloading && <Rowloader />}
         {!Isloading && products && (
-          <ProductList >
-           { accessories.map((item, index) =>( <h2 key={item.id}>{item.name}</h2>))}
+          <ProductList>
+            {clothings.map((item, index) => (
+              <ProductCard productDetails={item} />
+            ))}
+          </ProductList>
+        )}
+      </Card>
+
+      <Card sx={{ padding: 4, marginTop: 4, borderRadius: 0, marginBottom: 2 }}>
+        <Typography variant="h5">Best of accessories</Typography>
+        {Isloading && <Rowloader />}
+        {!Isloading && products && (
+          <ProductList>
+            {accessories.map((item, index) => (
+              <ProductCard productDetails={item} />
+            ))}
           </ProductList>
         )}
       </Card>
     </section>
+    </section>
   );
 };
-
 export default Products;

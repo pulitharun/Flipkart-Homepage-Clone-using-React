@@ -1,19 +1,20 @@
 import { Card } from "@mui/material";
 import React from "react";
-import { categories } from "./data";
+import { categories } from "./data.js";
 import "./categories.css"
 
 const Categories = () => {
   return (
     <section className="categories_wrapper">
+    <section className="categories_wrapper container">
       <Card
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          gap: 12,
-          p : 2,
-          borderRadius:0,
+          gap: 8,
+          p: 2,
+          borderRadius: 0,
         }}
       >
         {categories.map((item, index) => (
@@ -24,7 +25,7 @@ const Categories = () => {
         ))}
       </Card>
     </section>
+    </section>
   );
 };
-
 export default Categories;

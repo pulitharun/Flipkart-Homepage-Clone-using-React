@@ -2,20 +2,26 @@ import React from "react";
 import Slider from "react-slick";
 import { carouselImages } from "./carouselData";
 import "./carousel.css";
-import "../categories/categories.css"
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 const Carousel = () => {
   return (
+    <div>
     <div className="carousel_wrapper">
-      <Slider nextArrow={<NextButton />} prevArrow={<PrevButton />}>
-        {carouselImages.map((item, index) => (
-          <div className="carousel_item" key={index}>
+      <Slider
+        autoplay={true}
+        speed={500}
+        nextArrow={<NextButton />}
+        prevArrow={<PrevButton />}
+      >
+        {carouselImages.map((item, indx) => (
+          <div className="carousel_item" key={indx}>
             <img src={item} />
           </div>
         ))}
       </Slider>
+    </div>
     </div>
   );
 };
@@ -28,7 +34,9 @@ const NextButton = (props) => {
       style={style}
       onClick={onClick}
     >
-      <ChevronRightIcon />
+      <div className="carousel_btn_icon">
+        <ChevronRightIcon sx={{ color: "black" }} />
+      </div>
     </div>
   );
 };
@@ -41,9 +49,10 @@ const PrevButton = (props) => {
       style={style}
       onClick={onClick}
     >
-      <ChevronLeftIcon />
+      <div className="carousel_btn_icon">
+        <ChevronLeftIcon sx={{ color: "black" }} />
+      </div>
     </div>
   );
 };
-
 export default Carousel;

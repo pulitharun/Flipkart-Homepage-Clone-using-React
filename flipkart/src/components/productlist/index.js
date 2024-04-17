@@ -1,12 +1,9 @@
 import React from "react";
+import "./productList.css";
 
+const ProductList = (props) => {
+  const { children } = props;
+  return <div className="product_list_wrapper">{children}</div>;
+};
 
-const ProductList = (props) =>{
-    return (
-        <div className="product_list_wrapper ">
-
-        </div>
-    )
-}
-
-export default ProductList
+export default ProductList;
